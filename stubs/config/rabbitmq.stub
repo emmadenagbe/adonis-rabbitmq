@@ -1,0 +1,36 @@
+{{{
+  exports({ to: app.configPath('rabbitmq.ts') })
+}}}
+import env from '#start/env'
+import { defineConfig } from '@emmadenagbe/rabbitmq'
+import { InferConnections } from '@emmadenagbe/rabbitmq/types'
+
+const rabbitmqConfig = defineConfig({
+  connection: 'main',
+
+  connections: {
+    /*
+    |--------------------------------------------------------------------------
+    | The default connection
+    |--------------------------------------------------------------------------
+    |
+    | The main broker connection used to publish messages and run consumers,
+    | unless a consumer/publish call names a different connection explicitly.
+    |
+    */
+    main: {
+      url: env.get('RABBITMQ_URL'),
+      prefetch: 10,
+      connectionOptions: {
+        heartbeatIntervalInSeconds: 5,
+        reconnectTimeInSeconds: 5,
+      },
+    },
+  },
+})
+
+export default rabbitmqConfig
+
+declare module '@emmadenagbe/rabbitmq/types' {
+  export interface RabbitMQConnections extends InferConnections<typeof rabbitmqConfig> {}
+}
