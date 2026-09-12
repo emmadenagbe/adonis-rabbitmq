@@ -45,6 +45,8 @@ await rabbitmq.sendToQueue('orders', { id: order.id })
 
 Both return a promise that resolves once RabbitMQ has actually confirmed the message, not just when it's been sent.
 
+Note: if you write your own ace command that resolves `rabbitmq` from the container directly (rather than publishing from a controller/service, or letting a `@consumer` run via the normal boot process), add `static options = { startApp: true }` to that command. Ace doesn't fully boot the app for commands by default, so the binding won't exist yet without it — this is an AdonisJS ace thing, not specific to this package.
+
 ## Writing a consumer
 
 Consumers are classes. Put them wherever you like (`app/consumers/` is a reasonable default) and decorate them with `@consumer`:
