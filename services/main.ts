@@ -1,5 +1,5 @@
 /*
- * @emmadenagbe/rabbitmq
+ * @emmadenagbe/adonis-rabbitmq
  *
  * RabbitMQ provider for AdonisJS 6
  */

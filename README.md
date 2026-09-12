@@ -1,8 +1,8 @@
-# @emmadenagbe/rabbitmq
+# @emmadenagbe/adonis-rabbitmq
 
-[![npm version](https://img.shields.io/npm/v/@emmadenagbe/rabbitmq.svg)](https://www.npmjs.com/package/@emmadenagbe/rabbitmq)
-[![checks](https://github.com/emmadenagbe/ad-rabbitmq/actions/workflows/checks.yml/badge.svg)](https://github.com/emmadenagbe/ad-rabbitmq/actions/workflows/checks.yml)
-[![license](https://img.shields.io/npm/l/@emmadenagbe/rabbitmq.svg)](LICENSE.md)
+[![npm version](https://img.shields.io/npm/v/@emmadenagbe/adonis-rabbitmq.svg)](https://www.npmjs.com/package/@emmadenagbe/adonis-rabbitmq)
+[![checks](https://github.com/emmadenagbe/adonis-rabbitmq/actions/workflows/checks.yml/badge.svg)](https://github.com/emmadenagbe/adonis-rabbitmq/actions/workflows/checks.yml)
+[![license](https://img.shields.io/npm/l/@emmadenagbe/adonis-rabbitmq.svg)](LICENSE.md)
 
 A RabbitMQ integration for AdonisJS 6. It wraps [amqp-connection-manager](https://github.com/jwalton/node-amqp-connection-manager) so connections reconnect on their own, and plugs into AdonisJS's container so you can publish messages and write consumers the same way you'd write anything else in an Adonis app.
 
@@ -18,7 +18,7 @@ A RabbitMQ integration for AdonisJS 6. It wraps [amqp-connection-manager](https:
 ## Install
 
 ```sh
-node ace add @emmadenagbe/rabbitmq
+node ace add @emmadenagbe/adonis-rabbitmq
 ```
 
 This does three things:
@@ -32,7 +32,7 @@ By default it connects to `amqp://guest:guest@localhost:5672`. Change `RABBITMQ_
 ## Publishing a message
 
 ```ts
-import rabbitmq from '@emmadenagbe/rabbitmq/services/main'
+import rabbitmq from '@emmadenagbe/adonis-rabbitmq/services/main'
 
 await rabbitmq.publish('orders_exchange', 'order.created', { id: order.id })
 ```
@@ -51,7 +51,7 @@ Consumers are classes. Put them wherever you like (`app/consumers/` is a reasona
 
 ```ts
 // app/consumers/orders_consumer.ts
-import { consumer, BaseConsumer } from '@emmadenagbe/rabbitmq'
+import { consumer, BaseConsumer } from '@emmadenagbe/adonis-rabbitmq'
 
 @consumer({
   queue: 'orders',

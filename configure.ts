@@ -1,5 +1,5 @@
 /*
- * @emmadenagbe/rabbitmq
+ * @emmadenagbe/adonis-rabbitmq
  *
  * RabbitMQ provider for AdonisJS 6
  */
@@ -38,6 +38,6 @@ export async function configure(command: Configure) {
    * Add provider to rc file
    */
   await codemods.updateRcFile((rcFile: any) => {
-    rcFile.addProvider('@emmadenagbe/rabbitmq/rabbitmq_provider')
+    rcFile.addProvider('@emmadenagbe/adonis-rabbitmq/rabbitmq_provider')
   })
 }

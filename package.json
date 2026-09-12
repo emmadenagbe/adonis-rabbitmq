@@ -1,5 +1,5 @@
 {
-  "name": "@emmadenagbe/rabbitmq",
+  "name": "@emmadenagbe/adonis-rabbitmq",
   "description": "RabbitMQ provider for AdonisJS 6 with resilient connections, declarative consumers, and IoC container integration",
   "version": "0.1.0",
   "engines": {
@@ -41,13 +41,13 @@
   ],
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/emmadenagbe/ad-rabbitmq#readme",
+  "homepage": "https://github.com/emmadenagbe/adonis-rabbitmq#readme",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/emmadenagbe/ad-rabbitmq.git"
+    "url": "git+ssh://git@github.com/emmadenagbe/adonis-rabbitmq.git"
   },
   "bugs": {
-    "url": "https://github.com/emmadenagbe/ad-rabbitmq/issues"
+    "url": "https://github.com/emmadenagbe/adonis-rabbitmq/issues"
   },
   "devDependencies": {
     "@adonisjs/core": "^6.14.0",

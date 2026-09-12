@@ -2,8 +2,8 @@
   exports({ to: app.configPath('rabbitmq.ts') })
 }}}
 import env from '#start/env'
-import { defineConfig } from '@emmadenagbe/rabbitmq'
-import { InferConnections } from '@emmadenagbe/rabbitmq/types'
+import { defineConfig } from '@emmadenagbe/adonis-rabbitmq'
+import { InferConnections } from '@emmadenagbe/adonis-rabbitmq/types'
 
 const rabbitmqConfig = defineConfig({
   connection: 'main',
@@ -31,6 +31,6 @@ const rabbitmqConfig = defineConfig({
 
 export default rabbitmqConfig
 
-declare module '@emmadenagbe/rabbitmq/types' {
+declare module '@emmadenagbe/adonis-rabbitmq/types' {
   export interface RabbitMQConnections extends InferConnections<typeof rabbitmqConfig> {}
 }
