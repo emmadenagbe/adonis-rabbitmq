@@ -1,7 +1,7 @@
 {
   "name": "@emmadenagbe/adonis-rabbitmq",
   "description": "RabbitMQ provider for AdonisJS 6 with resilient connections, declarative consumers, and IoC container integration",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "node": ">=20.6.0"
   },
